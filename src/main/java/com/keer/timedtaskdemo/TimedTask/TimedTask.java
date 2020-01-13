@@ -1,4 +1,4 @@
-package com.keer.timedtaskdemo;
+package com.keer.timedtaskdemo.TimedTask;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,26 +18,26 @@ public class TimedTask {
 
 
     /**
-     * 每天三点执行
+     * 每10秒执行一次
      */
-    @Scheduled(cron="0 0 3 * * ? ")
-    public void scheduled(){
-        logger.info("这个是定时任务，每天3点执行");
+    @Scheduled(cron="0/10 * * * * ? ")
+    public void cron(){
+        logger.info("cron任务，每10秒执行一次");
     }
 
     /**
-     * 上一次执行完后，10秒在执行一次
+     * 上一次执行完后，15秒在执行一次
      */
-    @Scheduled(fixedRate = 1000*10)
-    public void fixed(){
-        logger.info("10s 后在执行一次");
+    @Scheduled(fixedRate = 1000*15)
+    public void fixedRate(){
+        logger.info("fixedRate任务，每15s后执行一次");
     }
 
     /**
-     * 上一次执行完，每10秒执行一次
+     * 上一次执行完，5秒后在执行
      */
-    @Scheduled(fixedDelay = 1000*20)
+    @Scheduled(fixedDelay = 1000*5)
     public void fixedDelay(){
-        logger.info("每20s，执行一次");
+        logger.info("fixedDelay任务，任务执行后5秒执行");
     }
 }

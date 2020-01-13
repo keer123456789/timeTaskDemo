@@ -8,7 +8,7 @@ package com.keer.timedtaskdemo.Service;
  * @Description: 接口
  */
 public interface IService {
-    void timeRate();
+
 
     void timeDelay();
 }

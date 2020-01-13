@@ -21,12 +21,7 @@ public class controller {
     @Autowired
     IService service;
 
-    @GetMapping("/hello")
-    public void hello(){
-        logger.info("调用定时程序，执行一次后，10秒后在执行一次");
-        service.timeRate();
 
-    }
 
     @GetMapping("/world")
     public void world(){
