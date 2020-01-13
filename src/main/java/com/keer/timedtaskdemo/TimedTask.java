@@ -36,8 +36,8 @@ public class TimedTask {
     /**
      * 上一次执行完，每10秒执行一次
      */
-    @Scheduled(fixedDelay = 1000*10)
+    @Scheduled(fixedDelay = 1000*20)
     public void fixedDelay(){
-        logger.info("每10s，执行一次");
+        logger.info("每20s，执行一次");
     }
 }
